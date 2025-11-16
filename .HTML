@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookXcess Redesign Template</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons for aesthetic UI elements -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c5282; /* Deep Blue, professional and trustworthy */
+            --accent-color: #ff5722;  /* Bright Orange/Red, for sale emphasis */
+            --dark-bg: #1f2937;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb; /* Light background for book covers to pop */
+        }
+        .header-strip {
+            background-color: var(--primary-color);
+        }
+        .sale-badge {
+            background-color: var(--accent-color);
+            transform: rotate(-5deg);
+        }
+        .cta-button {
+            background-color: var(--accent-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .cta-button:hover {
+            background-color: #e64a19;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-color);
+        }
+
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Top Promotional Strip -->
+    <div class="header-strip text-white text-center py-2 text-sm font-semibold tracking-wide">
+        FREE SHIPPING on all orders over RM150! | Up to 80% OFF Mega Sale Extended!
+    </div>
+
+    <!-- Main Navigation Bar (Sticky) -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            
+            <!-- Logo -->
+            <div class="flex items-center space-x-8">
+                <a href="#" class="text-3xl font-extrabold text-gray-900 tracking-tight">BookXcess</a>
+                
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex space-x-6 text-sm font-medium">
+                    <a href="#" class="text-gray-600 hover:text-gray-900 transition duration-150">New Arrivals</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900 transition duration-150">Fiction</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900 transition duration-150">Non-Fiction</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900 transition duration-150">Children</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900 transition duration-150">Clearance</a>
+                </nav>
+            </div>
+
+            <!-- Search and Icons -->
+            <div class="flex items-center space-x-4">
+                <div class="relative hidden sm:block">
+                    <input type="text" placeholder="Search for books, ISBN, or author..." class="py-2 pl-10 pr-4 w-64 border border-gray-200 rounded-full focus:ring-2 focus:ring-blue-500 transition duration-150">
+                    <i data-lucide="search" class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"></i>
+                </div>
+                
+                <button class="p-2 rounded-full hover:bg-gray-100 transition duration-150 relative">
+                    <i data-lucide="user" class="w-6 h-6 text-gray-600"></i>
+                </button>
+                
+                <!-- Shopping Cart Icon with Badge -->
+                <button class="p-2 rounded-full hover:bg-gray-100 transition duration-150 relative">
+                    <i data-lucide="shopping-bag" class="w-6 h-6 text-gray-600"></i>
+                    <span class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full">3</span>
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden p-2 rounded-full hover:bg-gray-100 transition duration-150">
+                    <i data-lucide="menu" class="w-6 h-6 text-gray-600"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area: Hero Banner & Featured Collections (Homepage Structure) -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- 1. Hero Banner: Discount Focus -->
+        <section class="mb-12 rounded-2xl overflow-hidden shadow-xl bg-gray-900 relative h-96 flex items-center justify-center" style="background-image: url('https://placehold.co/1200x400/1E293B/ffffff?text=MASSIVE+BOOK+SALE+-+UP+TO+80%25+OFF'); background-size: cover; background-position: center;">
+            <div class="relative z-10 text-center p-8 bg-black bg-opacity-40 rounded-xl">
+                <h1 class="text-5xl font-extrabold text-white mb-4 leading-tight">The Big Bad Book Sale is BACK!</h1>
+                <p class="text-xl text-gray-200 mb-6 font-medium">Millions of books, massive savings. Grab your favorites now!</p>
+                <a href="#" class="cta-button inline-block text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition duration-300">
+                    Shop All Sale Items
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. Featured Categories/Collections -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-6">Discover Our Top Categories</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                
+                <!-- Category Card 1 -->
+                <a href="#" class="relative block bg-white rounded-xl overflow-hidden shadow-lg group hover:shadow-2xl transition duration-300">
+                    <img src="https://placehold.co/400x250/FCD34D/333?text=FICTION" onerror="this.onerror=null;this.src='https://placehold.co/400x250/FCD34D/333?text=FICTION';" alt="Fiction Books" class="w-full h-40 object-cover group-hover:scale-105 transition duration-500">
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-gray-900">Fiction Bestsellers</h3>
+                        <p class="text-sm text-gray-500">Thrillers, Romance, Sci-Fi</p>
+                    </div>
+                </a>
+                
+                <!-- Category Card 2 -->
+                <a href="#" class="relative block bg-white rounded-xl overflow-hidden shadow-lg group hover:shadow-2xl transition duration-300">
+                    <img src="https://placehold.co/400x250/9CA3AF/333?text=CHILDRENS" onerror="this.onerror=null;this.src='https://placehold.co/400x250/9CA3AF/333?text=CHILDRENS';" alt="Children's Books" class="w-full h-40 object-cover group-hover:scale-105 transition duration-500">
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-gray-900">Children's & YA</h3>
+                        <p class="text-sm text-gray-500">Ages 0-16. Stories & Education</p>
+                    </div>
+                </a>
+                
+                <!-- Category Card 3 -->
+                <a href="#" class="relative block bg-white rounded-xl overflow-hidden shadow-lg group hover:shadow-2xl transition duration-300">
+                    <img src="https://placehold.co/400x250/6EE7B7/333?text=BUSINESS" onerror="this.onerror=null;this.src='https://placehold.co/400x250/6EE7B7/333?text=BUSINESS';" alt="Non-Fiction Books" class="w-full h-40 object-cover group-hover:scale-105 transition duration-500">
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-gray-900">Non-Fiction & Business</h3>
+                        <p class="text-sm text-gray-500">Self-Help, Cooking, History</p>
+                    </div>
+                </a>
+
+                 <!-- Category Card 4 (Sale Highlight) -->
+                <a href="#" class="relative block bg-white rounded-xl overflow-hidden shadow-lg group hover:shadow-2xl transition duration-300">
+                    <div class="w-full h-40 flex items-center justify-center bg-red-600 text-white p-4 group-hover:bg-red-700 transition duration-300">
+                        <div class="text-center">
+                            <i data-lucide="tag" class="w-8 h-8 mx-auto mb-2"></i>
+                            <h3 class="text-xl font-bold">RM10 & BELOW!</h3>
+                            <p class="text-sm font-medium">Shop the Lowest Prices</p>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-red-50">
+                        <h3 class="text-lg font-bold text-red-700">Clearance Corner</h3>
+                        <p class="text-sm text-red-500">Limited Stock, Unlimited Value</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- 3. Dynamic Product Display Section (Product Grid) -->
+        <section class="mb-12">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-extrabold text-gray-900">New Arrivals & Hot Deals</h2>
+                <a href="#" class="text-base font-medium text-blue-600 hover:text-blue-800 transition duration-150 flex items-center">
+                    View All <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+                </a>
+            </div>
+
+            <!-- Product Grid Container - Content injected by JavaScript -->
+            <div id="product-grid-container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 lg:gap-6">
+                <!-- Dynamic Product Cards Go Here -->
+            </div>
+            
+            <!-- Load More Button -->
+            <div class="text-center mt-8">
+                <button id="load-more-btn" class="border border-gray-300 text-gray-700 font-semibold py-2 px-6 rounded-full hover:bg-gray-100 transition duration-150 flex items-center justify-center mx-auto">
+                    Load More Items <i data-lucide="chevrons-down" class="w-5 h-5 ml-2"></i>
+                </button>
+            </div>
+        </section>
+
+
+        <!-- 4. Secondary Promo Banner -->
+        <section class="mb-12">
+            <div class="bg-blue-100 p-8 rounded-2xl flex flex-col md:flex-row items-center justify-between shadow-lg">
+                <div class="mb-4 md:mb-0">
+                    <h2 class="text-2xl font-extrabold text-blue-900">Join the BookXcess Loyalty Program!</h2>
+                    <p class="text-blue-700">Get early access to sales, exclusive discounts, and earn points on every purchase.</p>
+                </div>
+                <button class="bg-blue-600 text-white font-bold py-2 px-6 rounded-full hover:bg-blue-700 transition duration-150">
+                    Sign Up Now
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8">
+            
+            <!-- Company Info -->
+            <div>
+                <h4 class="text-xl font-bold mb-4">BookXcess</h4>
+                <p class="text-sm text-gray-400 leading-relaxed">The home of big discounts and great books. Our mission is to make reading affordable for everyone.</p>
+                <div class="flex space-x-4 mt-4">
+                    <a href="#" class="text-gray-400 hover:text-white"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+
+            <!-- Customer Service -->
+            <div>
+                <h4 class="font-semibold mb-4">Customer Service</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="text-gray-400 hover:text-white transition duration-150">Contact Us</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition duration-150">FAQ</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition duration-150">Track Your Order</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition duration-150">Shipping & Delivery</a></li>
+                </ul>
+            </div>
+
+            <!-- Policies -->
+            <div>
+                <h4 class="font-semibold mb-4">Policies</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="text-gray-400 hover:text-white transition duration-150">Return Policy</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition duration-150">Privacy Policy</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition duration-150">Terms of Service</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div>
+                <h4 class="font-semibold mb-4">Stay Informed</h4>
+                <p class="text-sm text-gray-400 mb-3">Get the latest sale updates directly to your inbox!</p>
+                <form class="flex">
+                    <input type="email" placeholder="Enter your email" class="p-3 rounded-l-lg text-gray-900 w-full focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <button type="submit" class="bg-blue-600 text-white p-3 rounded-r-lg hover:bg-blue-700 transition duration-150">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="text-center text-gray-500 text-xs mt-8 border-t border-gray-800 pt-4">
+            &copy; <span id="current-year"></span> BookXcess Website Redesign Template. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // --- DATA AND RENDERING LOGIC ---
+
+        // CSV data embedded from the uploaded file snippet
+        const csvData = `Title,Author,Publisher,Price (RM),Quantity,Genre,Year 
+Harry Potter and the Half-Blood Prince,J.K. Rowling,Bloomsbury,39.9,10,Fantasy,2005
+Harry Potter and the Deathly Hallows,J.K. Rowling,Bloomsbury,42.5,10,Fantasy,2007
+A Feast for Crows,George R.R. Martin,Bantam Books,45,10,Fantasy,2005
+A Dance with Dragons,George R.R. Martin,Bantam Books,48,10,Fantasy,2011
+The Tales of Beedle the Bard,J.K. Rowling,Bloomsbury,35,10,Fantasy,2008
+The Casual Vacancy,J.K. Rowling,"Little, Brown",40,10,Drama,2012
+The Fault in Our Stars,John Green,Penguin,35,10,Romance,2013
+Paper Towns,John Green,Penguin,33,10,Mystery,2014
+The Maze Runner,James Dashner,Delacorte Press,37,10,Fiction,2015
+The Scorch Trials,James Dashner,Delacorte Press,37,10,Fiction,2009
+The Death Cure,James Dashner,Delacorte Press,37,10,Fiction,2013
+The Silent Patient,Alex Michaelides,Orion,39,10,Thriller,2017
+Gone Girl,Gillian Flynn,Crown Publishing,40,10,Thriller,2006
+The Midnight Library,Matt Haig,Canongate,42,10,Fiction,2020
+Lawak Kampus,Keith,Gempak Starz,15.9,10,Comedy,2013
+Candy Series: Cinta Muka Buku,Suri Ryana,Gempak Starz,21.9,10,Romance,2019
+Dendam Pontianak,Ben Wong,Gempak Starz,19.9,10,Horror,2022
+X-VENTURE Underworld,Slaium,Gempak Starz,22.9,10,Fantasy,2013
+Lawak Kingdom,Keith,Gempak Starz,17.9,10,Comedy,2019
+Fixi Retro: Jerat,Sybella Nor,Fixi,26.9,10,Thriller,2020
+Langit Vanilla,Wani Ardy,Fixi,27.9,10,Romance,2015
+Ngeri,Shaz Johar,Fixi,26.9,10,Thriller,2017
+Tombiruo,Ramlee Awang Murshid,Fixi,30,10,Action,2015
+Misi Fizik - Edisi Kemas Kini (2023),Tim MISI,Gempak Starz,9.9,10,Fiction,2017
+Misi 10A - Edisi Kemas Kini,Tim MISI,Gempak Starz,9.9,10,Fiction,2019
+Misi 4 Flat - Edisi Kemas Kini,Tim MISI,Gempak Starz,14.9,10,Fiction,2021
+`;
+
+        let allProducts = [];
+        let productsPerPage = 10;
+        let currentPage = 0;
+
+        // Simple CSV parser
+        function parseCSV(csv) {
+            const lines = csv.split('\n').filter(line => line.trim() !== '');
+            if (lines.length === 0) return [];
+            
+            // Basic header parsing
+            const headers = lines[0].split(',').map(h => h.trim().replace(/\s\(RM\)/, 'Price').replace(/\s/g, ''));
+            const products = [];
+
+            for (let i = 1; i < lines.length; i++) {
+                // Simple split by comma for non-quoted fields
+                // This is a basic parser and might break with complex quoted fields, but works for the snippet
+                const values = lines[i].match(/(?:"[^"]*"|[^,])+/g).map(v => v.trim().replace(/"/g, ''));
+
+                if (values.length === headers.length) {
+                    const product = {};
+                    headers.forEach((header, index) => {
+                        product[header] = values[index];
+                    });
+                    
+                    // Convert price to number and calculate discounts
+                    const listPrice = parseFloat(product.Price);
+                    if (!isNaN(listPrice)) {
+                        const discountPercent = Math.floor(Math.random() * (85 - 50 + 1)) + 50; // Random discount 50%-85%
+                        const salePrice = (listPrice * (1 - discountPercent / 100)).toFixed(2);
+                        product.listPrice = listPrice.toFixed(2);
+                        product.salePrice = salePrice;
+                        product.discountPercent = discountPercent;
+                    }
+
+                    products.push(product);
+                }
+            }
+            return products;
+        }
+
+        function createProductCard(product) {
+            // Placeholder image link color based on genre (simple mock)
+            let color = '3b82f6'; // Default blue
+            if (product.Genre === 'Fantasy') color = '8B5CF6'; // Violet
+            if (product.Genre === 'Romance') color = 'EC4899'; // Pink
+            if (product.Genre === 'Thriller') color = '1F2937'; // Gray/Dark
+            
+            const coverPlaceholder = `https://placehold.co/150x230/${color}/ffffff?text=BOOK+COVER`;
+
+            return `
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 relative overflow-hidden group">
+                    <!-- Sale Badge -->
+                    <div class="sale-badge absolute top-2 right-2 px-3 py-1 text-xs font-bold text-white rounded-md shadow-md z-10">
+                        -${product.discountPercent}%
+                    </div>
+                    
+                    <!-- Book Cover Placeholder -->
+                    <div class="h-48 sm:h-64 flex items-center justify-center bg-gray-200 overflow-hidden">
+                        <img src="${coverPlaceholder}" alt="${product.Title} cover" class="object-cover h-full w-auto shadow-lg group-hover:scale-105 transition duration-500">
+                    </div>
+                    
+                    <div class="p-3">
+                        <h4 class="text-sm font-semibold truncate hover:whitespace-normal" title="${product.Title}">${product.Title}</h4>
+                        <p class="text-xs text-gray-500 mb-2 truncate" title="${product.Author}">by ${product.Author}</p>
+                        
+                        <!-- Pricing (Discount Emphasis) -->
+                        <div class="flex items-center justify-between">
+                            <span class="text-xl font-extrabold text-red-600">RM ${product.salePrice}</span>
+                            <span class="text-sm text-gray-400 line-through">RM ${product.listPrice}</span>
+                        </div>
+
+                        <!-- CTA -->
+                        <button class="w-full mt-2 py-1.5 text-xs font-semibold rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition duration-150">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderProducts() {
+            const container = document.getElementById('product-grid-container');
+            const start = currentPage * productsPerPage;
+            const end = start + productsPerPage;
+            const productsToRender = allProducts.slice(start, end);
+
+            let html = productsToRender.map(createProductCard).join('');
+            
+            // If it's the first page, replace content; otherwise, append
+            if (currentPage === 0) {
+                container.innerHTML = html;
+            } else {
+                container.insertAdjacentHTML('beforeend', html);
+            }
+            
+            // Update button visibility
+            const loadMoreBtn = document.getElementById('load-more-btn');
+            if (end >= allProducts.length) {
+                loadMoreBtn.classList.add('hidden');
+            } else {
+                loadMoreBtn.classList.remove('hidden');
+            }
+        }
+
+        function handleLoadMore() {
+            currentPage++;
+            renderProducts();
+        }
+
+
+        // --- MAIN INITIALIZATION ---
+
+        window.onload = function () {
+            // 1. Initialize icons
+            lucide.createIcons();
+
+            // 2. Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // 3. Process data
+            allProducts = parseCSV(csvData);
+
+            // 4. Initial rendering
+            renderProducts();
+
+            // 5. Attach Load More listener
+            document.getElementById('load-more-btn').addEventListener('click', handleLoadMore);
+
+        };
+    </script>
+</body>
+</html>
